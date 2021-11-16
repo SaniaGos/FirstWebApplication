@@ -1,0 +1,17 @@
+﻿@{
+	ViewData["Title"] = "404";
+}
+
+<div class="row">
+	<div class="exceptionmessage col-md-12 text-center">
+		<div class="center-block">
+			<img src="~/lib/Image/404.png" class="img-responsive" />
+		</div>
+
+		<strong>@ViewBag.Message</strong>
+		<span class="center-block small text-uppercase">@ViewBag.Main</span>
+
+
+		<div class="center-block">@Html.ActionLink("Return to the Homepage", "Index", "Home", null, new { @class = "btn btn-primary" })</div>
+	</div>
+</div>

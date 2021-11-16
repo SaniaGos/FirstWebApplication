@@ -1,0 +1,31 @@
+﻿@model WebApplicationNew.Models.Lead
+@{
+	ViewData["Title"] = "Видалення";
+}
+<h2>@ViewBag.Title</h2>
+<div>
+	<table class="table">
+		<tr>
+			<th>Ім'я</th>
+			<th>Прізвище</th>
+			<th>Сайт</th>
+			<th>Сума угоди</th>
+		</tr>
+		<tr>
+			<td>@Model.Name</td>
+			<td>@Model.SName</td>
+			<td><a href="@Model.ConpanyLink">Conpany Link</a></td>
+			<td>@Model.Transaction_ тис.грн.</td>
+		</tr>
+	</table>
+	<div>
+		<form asp-controller="Home" asp-action="Delete" method="post">
+			<div class="form-group">
+				<input type="submit" class="btn btn-outline-secondary" value="Видалити" />
+			</div>
+		</form>
+		<div>
+			<a asp-controller="Home" asp-action="Index">Вернутися до списку</a>
+		</div>
+	</div>
+</div>

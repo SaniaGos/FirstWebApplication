@@ -1,0 +1,34 @@
+﻿@model WebApplicationNew.Models.Lead
+@{
+	ViewData["Title"] = "Редагування";
+}
+<h2>@ViewData["Title"].</h2>
+
+<form asp-action="Edit" asp-controller="Home">
+	<div>
+		<input type="hidden" asp-for="Id" />
+		<div class="form-group">
+			<label asp-for="Name">Ім'я власника</label>
+			<input type="text" asp-for="Name" class="form-control form-control-sm" />
+		</div>
+		<div class="form-group">
+			<label asp-for="SName">Прізвище</label>
+			<input asp-for="SName" class="form-control  form-control-sm" />
+		</div>
+		<div class="form-group">
+			<label asp-for="ConpanyLink">Ссилка на компанію</label>
+			<input asp-for="ConpanyLink" placeholder="наприклад: google.com" class="form-control  form-control-sm" />
+		</div>
+		<div class="form-group">
+			<label asp-for="Transaction_">Сума угоди</label>
+			<input asp-for="Transaction_" class="form-control  form-control-sm" />
+		</div>
+		<div class="form-group">
+			<input type="submit" value="Зберегти" class="btn btn-outline-secondary" />
+		</div>
+	</div>
+</form>
+
+<div>
+	<a asp-controller="Home" asp-action="Index">Вернутися до списку</a>
+</div>

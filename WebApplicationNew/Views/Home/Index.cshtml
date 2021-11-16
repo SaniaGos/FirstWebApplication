@@ -1,0 +1,31 @@
+﻿@model IEnumerable<WebApplicationNew.Models.Lead>
+@{
+	ViewData["Title"] = "Список Leads";
+}
+<h2>@ViewData["Title"]</h2>
+<p>
+	<a asp-controller="Home" asp-action="Create">Добавити</a>
+</p>
+<table class="table">
+	<tr>
+		<th>Ім'я</th>
+		<th>Прізвище</th>
+		<th>Сайт</th>
+		<th>Сума угоди</th>
+		<th></th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+<tr>
+	<td>@item.Name</td>
+	<td>@item.SName</td>
+	<td><a href="@item.ConpanyLink">Conpany Link</a></td>
+	<td>@item.Transaction_ тис.грн.</td>
+	<td>
+		<a asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id">Змінити</a> |
+		<a asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id">Видалити</a>
+	</td>
+</tr>
+	}
+</table>
