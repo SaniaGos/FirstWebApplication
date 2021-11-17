@@ -57,6 +57,7 @@ namespace WebApplicationNew.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.Block = "none";
             return View();
         }
 
@@ -70,6 +71,7 @@ namespace WebApplicationNew.Controllers
             catch (Exception ex)
             {
                 ViewBag.Message = ex.Message;
+                ViewBag.Block = "block";
                 return View();
             }
             return RedirectToAction("Index");
