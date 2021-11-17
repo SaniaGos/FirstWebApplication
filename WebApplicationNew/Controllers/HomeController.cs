@@ -61,7 +61,7 @@ namespace WebApplicationNew.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Lead lead)
+        public IActionResult Create(Lead lead)
         {
             try
             {
@@ -69,7 +69,8 @@ namespace WebApplicationNew.Controllers
             }
             catch (Exception ex)
             {
-                return View("Create");
+                ViewBag.Message = ex.Message;
+                return View();
             }
             return RedirectToAction("Index");
         }
